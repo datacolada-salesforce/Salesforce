@@ -1,0 +1,45 @@
+<apex:page controller="JQueryDataTableDemoController" >
+    <c:EnhancedRelatedList object="Account" fieldSet="jhuang__Account_Related_List"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
+    
+    <apex:pageBlock title="JQuery DataTable Demo">
+        <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Employees</th>
+                <th>Phone</th>
+                <td>Fax</td>
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <apex:repeat value="{!accountList}" var="u">
+            <tr>
+                <td>{!u.Name}</td>
+                <td>{!u.Industry}</td>
+                <td>{!u.NumberOfEmployees}</td>
+                <td>{!u.Phone}</td>
+                <td>{!u.Fax}</td>
+            </tr>
+            </apex:repeat>
+            
+        </tbody>
+    </table> 
+
+    </apex:pageBlock>
+    
+    <script type='text/javascript' src="//code.jquery.com/jquery-1.11.3.min.js"/>
+    <script type='text/javascript' src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"/>
+    
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $('#example').DataTable({
+        		"order": [[1, "asc" ]]
+    		});
+        });
+    </script>
+	-->
+</apex:page>

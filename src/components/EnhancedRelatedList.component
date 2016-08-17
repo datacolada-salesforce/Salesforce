@@ -1,0 +1,38 @@
+<apex:component controller="EnhancedRelatedListController" > 
+    <apex:attribute type="String" name="object" assignTo="{!objectAPI}" description="object API" />
+    <apex:attribute type="String" name="fieldSet" assignTo="{!fieldSetName}" description="object API" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
+    <apex:pageBlock title="JQuery DataTable Demo">
+        <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <apex:repeat value="{!fieldSetMemberList}" var="f">
+                	<th>{!f.Label}</th>
+                </apex:repeat>
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <apex:repeat value="{!results}" var="u">
+            <tr>
+                <apex:repeat value="{!fieldSetMemberList}" var="f">
+                	<td>{!u[f.fieldPath]}</td>
+                </apex:repeat>
+            </tr>
+            </apex:repeat>
+            
+        </tbody>
+    </table> 
+    </apex:pageBlock>
+    
+    <script type='text/javascript' src="//code.jquery.com/jquery-1.11.3.min.js"/>
+    <script type='text/javascript' src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"/>
+    
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $('#example').DataTable({
+        		"order": [[1, "asc" ]]
+    		});
+        });
+    </script>
+</apex:component>
